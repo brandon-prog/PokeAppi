@@ -10,7 +10,7 @@ function Home() {
           />
         </h1>
         <h2 className='text-x1 font-semibold text-red-600'>¡Hola entrenador!</h2>
-        <p className='mb-4'>Para poder comenzar, ingresa tu nombre</p>
+         <p className='mb-4'>Para poder comenzar, ingresa tu nombre</p>
 
         <NameForm />
         </div>
