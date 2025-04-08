@@ -3,10 +3,12 @@ import axios from "axios"
 import { useName } from "../../contexts/NameContext"
 import PokemonsList from "./components/PokemonsList"
 import PokemonCard from './components/PokemonCard';
+import '../pokedex/Pokedex.css'
 
 const baseUrl = 'https://pokeapi.co/api/v2/pokemon'
 
-function Pokedex() {
+function Pokedex( {poke} ) {
+
 const [state] = useName()
 const [pokemons, setPokemons] = useState ([])
 const [singlePokemon, setSinglePokemon] = useState (null)
@@ -81,7 +83,7 @@ const searchPokemon = () => {
 
   return (
     <div >
-        <div className=' max-w-5x1 max-auto px-4 '>
+        <div className='cuadro'>
         <h2 className='mb-11'><span className="text-red-600 font-semibold">Bienvenido {state.name}</span>, aqui podras encotrar tu pókemon favorito</h2>
 
         {/* Aqui va el buscador y el filtro*/}
@@ -100,7 +102,7 @@ const searchPokemon = () => {
             <select 
             value={selectedType}
             onChange={(e) => setSelectedType(e.target.value)}
-            className='input ml-4'
+            className='pokemons-type'
             >
               <option value="all">Todos los Pokémones</option>
               {types.map(type => (

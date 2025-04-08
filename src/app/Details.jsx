@@ -48,14 +48,14 @@ function Details() {
   };
 
   return (
-    <div>
+    <div className={`shadow-lg rounded-xl p-11 sm:w-3/4 md:w-1/2 mx-auto mt-8 w-full h-40% type-bg--${pokemon.types[0]?.type.name}`}>
       <section className="max-w-5xl max-auto px-4 pt-8">
         <h3 className="text-5xl font-semibold text-center capitalize">
           {pokemon.name}
         </h3>
       </section>
       <section
-        className={`w-full h-40% type-bg--${pokemon.types[0]?.type.name} flex justify-center`}
+        className={'flex justify-center'}
       >
         <img
           className="size-5/9 object-contain"
@@ -129,7 +129,7 @@ function Details() {
   }}
 />
       </section>
-    </div>
+      </div>
   );
 }
 

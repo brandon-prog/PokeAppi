@@ -1,0 +1,11 @@
+.cuadro {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.pokemons-type {
+justify-content: center;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+margin-left: auto;
+margin-right: auto;
+}
