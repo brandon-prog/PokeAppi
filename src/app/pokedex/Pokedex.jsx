@@ -7,7 +7,7 @@ import '../pokedex/Pokedex.css'
 
 const baseUrl = 'https://pokeapi.co/api/v2/pokemon'
 
-function Pokedex( {poke} ) {
+function Pokedex() {
 
 const [state] = useName()
 const [pokemons, setPokemons] = useState ([])

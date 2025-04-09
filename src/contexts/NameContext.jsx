@@ -2,7 +2,7 @@ import { createContext, useContext, useReducer } from "react";
 
 const NameContext = createContext()
 
- export const types = Object.freeze ({
+export const types = Object.freeze({
     set_name: 'SET_NAME',
     clear_name: 'CLEAR_NAME'
 })
@@ -14,13 +14,16 @@ const initialState = {
 function nameReducer(state, action) {
     switch (action.type) {
         case types.set_name:
-            localStorage.removeItem('name', action.payload)
-            return{
+            // Guarda el nombre en localStorage
+            localStorage.setItem('name', action.payload)
+            return {
                 ...state,
                 name: action.payload
             }
-            case types.clear_name:
-            return{
+        case types.clear_name:
+            // Elimina el nombre de localStorage
+            localStorage.removeItem('name')
+            return {
                 ...state,
                 name: ''
             }
@@ -30,9 +33,9 @@ function nameReducer(state, action) {
 }
 
 export const NameProvider = ({ children }) => {
-const [state, dispatch] = useReducer(nameReducer, initialState)
+    const [state, dispatch] = useReducer(nameReducer, initialState)
 
-    return(
+    return (
         <NameContext.Provider value={[state, dispatch]}>
             {children}
         </NameContext.Provider>
