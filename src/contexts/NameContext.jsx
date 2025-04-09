@@ -14,14 +14,12 @@ const initialState = {
 function nameReducer(state, action) {
     switch (action.type) {
         case types.set_name:
-            // Guarda el nombre en localStorage
             localStorage.setItem('name', action.payload)
             return {
                 ...state,
                 name: action.payload
             }
         case types.clear_name:
-            // Elimina el nombre de localStorage
             localStorage.removeItem('name')
             return {
                 ...state,
